@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>豆瓣电影</title>
+    <link rel="stylesheet" href="css.css"/>
+    <link rel="stylesheet" href="bootstrap.css"/>
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+</head>
+<body ng-app="app">
+<!-- 导航栏-->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="" class="navbar-brand">豆瓣电影</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="">首页</a></li>
+                <li><a href="">电影</a></li>
+                <li><a href="index1.html">个人简历</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- 内容部分-->
+<div class="container-fluid">
+    <div class="row">
+        <!-- 左边菜单-->
+        <div class="col-sm-3 col-md-2 col-lg-2">
+            <!--<ul class="nav nav-pills nav-stacked" ng-init="selectedIndex=0">-->
+            <ul class="nav nav-pills nav-stacked">
+                <li ng-class="{active:selectedIndex==0}" ng-click="selectedIndex=0">
+                    <a href="#/in_theaters/0">正在热映</a>
+                </li>
+                <li ng-class="{active:selectedIndex==1}" ng-click="selectedIndex=1">
+                    <a href="#/coming_soon/0">即将上映</a>
+                </li>
+                <li ng-class="{active:selectedIndex==2}" ng-click="selectedIndex=2">
+                    <a href="#/top250/0">TOP250</a>
+                </li>
+                
+            </ul>
+            <!-- 搜索框-->
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="searchMovie" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info">搜索</button>
+                    </span>
+            </div>
+        </div>
+        <!-- 右边内容-->
+        <div class="col-sm-9 col-md-10 col-lg-10" ng-view>
+
+
+        </div>
+    </div>
+</div>
+
+
+<!--<script src="jquery.js"></script>-->
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="angular-route.js"></script>
+<!--<script src="ui-bootstrap.js"></script>-->
+<script src="app.js"></script>
+<script src="movie-list-controller.js"></script>
+<!--<script src="js/自定义指令.js"></script>-->
+<script src="movie-detail-controller.js"></script>
+</body>
+</html>
